@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Teams Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<h2>Team detail form</h2>
+<div *ngIf="team" class="container">
+<form method="post" enctype="application/x-www-form-urlencoded">
+  <ion-list>
+  <ion-item>
+    <ion-label>ID</ion-label>
+    <ion-input type="text" id="id" name="id" [(ngModel)]="team.id"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Name</ion-label>
+    <ion-input type="text" id="name" name="name" [(ngModel)]="team.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Description</ion-label>
+    <ion-input type="text" id="desc" name="desc " [(ngModel)]="team.desc"></ion-input>
+  </ion-item>
+  </ion-list>
+  <p>
+    <button ion-button full (click)="goBack()">Back</button>
+  </p>
+  <p>
+    <button ion-button round (click)="create()" color="secondary">Create</button>
+  </p>
+  <p>
+    <button ion-button outline (click)="save()" color="dark" >Update</button>
+  </p>
+</form>
+</div>
+</ion-content><ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Teams Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+<h2>Team detail form</h2>
+<div *ngIf="team" class="container">
+<form method="post" enctype="application/x-www-form-urlencoded">
+  <ion-list>
+  <ion-item>
+    <ion-label>ID</ion-label>
+    <ion-input type="text" id="id" name="id" [(ngModel)]="team.id"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Name</ion-label>
+    <ion-input type="text" id="name" name="name" [(ngModel)]="team.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Description</ion-label>
+    <ion-input type="text" id="desc" name="desc" [(ngModel)]="team.desc"></ion-input>
+  </ion-item>
+  </ion-list>
+  <p>
+      <button ion-button full (click)="goBack()">Back</button>
+  </p>
+  <p>
+    <button ion-button round (click)="create()" color="secondary">Create</button>
+  </p>
+  <p>
+    <button ion-button outline (click)="save()" color="dark">Update</button>
+  </p>
+</form>
+</div>
+</ion-content>

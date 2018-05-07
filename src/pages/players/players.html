@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Players Page</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <button ion-button color="secondary" icon-right (click)="onSelect($event, player)" (click)="gotoCreate()" >
+        <ion-icon name='people'></ion-icon>
+         Create
+      </button>
+	<ion-list>
+            <ion-item class="item-remove-animate item-icon-right"  *ngFor="let player of players"  (click)="onSelect($event, player)">
+               <ion-card>
+                  <ion-card-header (click)="gotoDetail(player)">
+                    {{player.name}}
+                  </ion-card-header>
+                  <ion-card-content>
+                    <p>ID: {{player.id}}</p>
+                    <p>Name: {{player.name}}</p>
+                    <p>Year of birth: {{player.yearBirth}}</p>
+                    <p>Team ID: {{player.teamId}}</p>
+                    <i class="icon ion-arrow-right-b"></i>
+                         <button ion-button color="danger" icon-left (click)="presentConfirm(player)">
+                            <ion-icon name='close'></ion-icon>
+                            Remove
+                         </button>
+                    </ion-card-content>
+              </ion-card>
+            </ion-item>
+        </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>
